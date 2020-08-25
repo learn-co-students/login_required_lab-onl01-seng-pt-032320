@@ -4,17 +4,17 @@ def new
 end 
 
 def create
-    if !params[:username].present?
+    if !params[:name].present?
         redirect_to "/login"
     else 
-        session[:username] = params[:username]
+        session[:name] = params[:name]
         redirect_to "/"
     end 
 end 
 
 def destroy
     if current_user 
-        session.delete :username
+        session.delete :name
     end 
 end 
 

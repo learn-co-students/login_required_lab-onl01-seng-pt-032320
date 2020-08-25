@@ -6,7 +6,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user 
 
   def current_user
-    !!session[:username]
+    if session[:name].present?
+      session[:name]
+    end 
   end 
 
 end
