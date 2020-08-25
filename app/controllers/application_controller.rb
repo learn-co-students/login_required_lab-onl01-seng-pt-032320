@@ -11,4 +11,12 @@ class ApplicationController < ActionController::Base
     end 
   end 
 
+  def hello
+    if session[:name].present? 
+      render :"hello"
+    else 
+      redirect_to "/login"
+    end 
+  end 
+
 end
