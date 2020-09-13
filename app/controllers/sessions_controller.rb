@@ -1,10 +1,12 @@
 class SessionsController < ApplicationController
-    before_action :require_logged_in
+
+    def new
+    end
 
     def create
         if params[:name] && !params[:name].empty?
             session[:name] = params[:name]
-        else
+        else 
             redirect_to '/login'
         end
     end
